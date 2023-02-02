@@ -14,4 +14,4 @@
    $b = (2 * $area ) / $height;
 
    echo $b;
-   echo $b;
+   
