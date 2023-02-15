@@ -4,7 +4,9 @@
     $num1 = 1;
     $num2 = 100;
     $num3 = 2;
+    
     $step = 1;
+
 
 
     for($counter = $num1; $counter <= $num2; $counter += $step)
