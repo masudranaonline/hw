@@ -13,6 +13,7 @@
                 $Status = 0;
                 break;
             }
+            
         }
         if($Status == 1)
             echo $num ." is prime number <br>" ;
