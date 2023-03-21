@@ -1,15 +1,44 @@
 <?php
-    $string = "Polytechnic";
-    $sub_string = "tech";
+	$main_str = 'Bangladesh';
+	$main_substr = 'adesh';
 
-    $array_string = str_split($string);
-    $array_sub_string = str_split($sub_string);
+	$str = str_split($main_str);  // ['P','o','t','y','','e','c','h','n','i','c']
+	$substr = str_split($main_substr); // ['t','e','c''h]
 
+	$str_size = sizeof($str);
+	$substr_size = sizeof($substr);
 
-    // for($i = 0; $i < sizeof($array_string); $i++){
-    //     for($j = 0; $j < sizeof($array_sub_string); $j++){
+	$positions = [];
+	$substr_status = 0;
 
-    //     }
-    // }
+	if(str_contains($main_str, $main_substr))
+	{
 
-    echo strpos($string,$sub_string);
+		for($i = 0; $i < $substr_size; $i++)
+		{
+			for($j = 0; $j < $str_size; $j++)
+			{
+				if($substr[$i] == $str[$j])
+				{
+					$status = 1;
+					break;
+				}
+			}
+
+			if($status)
+			{
+				array_push($positions,$j);
+				$substr_status = 1;
+			}
+			else
+			{
+				$substr_status = 0;
+				// break;
+			}
+		}
+
+		echo $positions[0];
+	}
+	else{
+		echo " Not a valid sub string";
+	}
