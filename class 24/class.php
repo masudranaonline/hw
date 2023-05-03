@@ -5,17 +5,24 @@ class calculation{
     public $n2 = 12;
 
 
-    public function sum()
+    public function sum($n1,$n2)
     {
+        $this->n1 = $n1;
+        $this->n2 = $n2;
         return $result = $this->n1 + $this->n2;
     }
-    public function sub()
+    public function sub($n1,$n2)
     {
-        return $result = $this->n1 - $this->n2;
+        $sum = $this->sum(9,2);
+        $this->n1 = $n1;
+        $this->n2 = $n2;
+        return $result = $sum - $this->n2;
     }
     public function mul()
     {
-        return $relult  = $this->n1 * $this->n2;
+        $sum = $this->sum(4,6);
+        $sub = $this->sub(8,5);
+        return $relult  = $sum * $sub;
     }
     public function div()
     {
@@ -27,6 +34,6 @@ class calculation{
 
 $obj = new calculation();
 
-// echo $obj->div();
+echo $obj->mul(8,5);
 
 
