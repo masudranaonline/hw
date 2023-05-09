@@ -3,7 +3,7 @@
 
  $object = new calculation();
 
- echo $object->sum();
+//  echo $object->sum();
 
 
 

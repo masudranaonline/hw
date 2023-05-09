@@ -34,6 +34,6 @@ class calculation{
 
 $obj = new calculation();
 
-echo $obj->sub(8,5);
+echo $obj->sub(8,4);
 
 
