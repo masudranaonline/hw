@@ -4,6 +4,12 @@
         public $NumberOne;
         public $NumberTwo;
 
+        public function __construct($n1,$n2)
+        {
+            $this->NumberOne = $n1;
+            $this->NumberTwo = $n2;
+            echo $n1 + $n2;
+        }
 
         public function calculateSum($n1,$n2){
             $this->NumberOne = $n1;
@@ -17,5 +23,5 @@
         }
     }
 
-    $CalculateObj = new Calculation();
-    $CalculateObj->calculateSub(45,25);
+    $CalculateObj = new Calculation(55,44);
+    // $CalculateObj->calculateSub(45,25);
