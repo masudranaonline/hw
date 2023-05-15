@@ -1,6 +1,5 @@
 <?php
 
-use ChildClass as GlobalChildClass;
 
     interface ParentClass {
 
@@ -11,4 +10,6 @@ use ChildClass as GlobalChildClass;
         public $name;
     }
 
-    $object = new |GlobalChildClass();
+
+
+    ?>
