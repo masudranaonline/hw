@@ -11,10 +11,13 @@
         public function sub($n1,$n2){
             return $n1 - $n2;
         }
+        public function mul($n1,$n2){
+            return $n1 * $n2;
+        }
     }
 
     $object = new ChildClass();
-   echo $object->sub(10,5);
+   echo $object->mul(10,5);
 
     // $object = new Calculation();
 
