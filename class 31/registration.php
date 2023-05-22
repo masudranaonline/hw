@@ -1,20 +1,26 @@
 <?php
-    $connect = mysqli_connect('localhost','root','','wdb2');
+
+    $host = 'localhost';
+    $user = 'root';
+    $pass = '';
+    $db = 'wdb2';
+    $connect = mysqli_connect($host,$user,$pass,$db);
+
     if(!$connect){
-        echo "Connection Failed !";
+        echo "connection Failed !";
     }
 
-    if(isset($_POST['Submit']))
-    {
-        $name = $_POST['name'];
+    if(isset($_POST)){
+        // $name = $_POST['name'];
         $mail = $_POST['email'];
-        $pass = $_POST['password'];
-
-
-        $query = "INSERT INTO registration(Name, E-mail, Password) VALUES ('$name','$mail','$pass')";
-        mysqli_query($connect,$query);
+        // $password = $_POST['password'];
+       
+        // $query = "INSERT INTO registration( Name, E-mail, Password) VALUES ('$name','$mail','$password')";
+        // mysqli_query($connect,$query);
     }
-//    INSERT INTO registration(Name, E-mail, Password) VALUES ('$name','$mail','$pass')
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +38,8 @@
 
             <div class="mx-auto bg-info p-5 m-5 form" style="width: 400px;">
                 <h3>Registration Now</h3>
-                <form action="" method="post">
+                <form action="registration.php" enctype="multipart/form-data" method="POST">
+                    
                     <label>Name</label><br>
                     <input type="text" name="name" class="form-control" ><br>
 
