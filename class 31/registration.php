@@ -3,7 +3,7 @@
     $host = 'localhost';
     $user = 'root';
     $pass = '';
-    $db = 'wdb2';
+    $db = 'wd2';
     $connect = mysqli_connect($host,$user,$pass,$db);
 
     if(!$connect){
@@ -11,12 +11,12 @@
     }
 
     if(isset($_POST)){
-        // $name = $_POST['name'];
+        $name = $_POST['name'];
         $mail = $_POST['email'];
-        // $password = $_POST['password'];
+        $password = $_POST['password'];
        
-        // $query = "INSERT INTO registration( Name, E-mail, Password) VALUES ('$name','$mail','$password')";
-        // mysqli_query($connect,$query);
+        $query = "INSERT INTO user2( name, mail, password) VALUES ('$name','$mail','$password')";
+        mysqli_query($connect,$query);
     }
 
 
@@ -30,6 +30,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+   
     <link rel="stylesheet" href="style.css">
     <title>Welcome</title>
 </head>
