@@ -1,5 +1,5 @@
 <?php
-    include 'connection.php';
+    include('connection.php');
 
     if(isset($_POST['submit']))
     {
@@ -11,7 +11,11 @@
         $Query = "INSERT INTO students(name, roll, num, address) VALUES('$name', '$roll', '$number', '$address')";
 
         $result = mysqli_query($connection, $Query);
-
+        if($result)
+            echo "Data Submit successfully";
+        else
+            echo "Something Error !";
+        
         
     }
 
