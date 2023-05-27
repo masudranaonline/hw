@@ -1,8 +1,23 @@
 <?php
     include('connection.php');
 
+    if(isset($_REQUEST['action'])){
+        $id = $_REQUEST['id'];
+
+        $Query = "DELETE FROM students WHERE id = $id";
+        $Result = mysqli_query($connection,$Query);
+
+        if($Result){
+            echo "Data Deleted successfully";
+        }else{
+            echo "something went rong";
+        }
+    }
+
     $Query = "SELECT * FROM students";
     $Result = mysqli_query($connection,$Query);
+
+    
 
 
     // while($Data = mysqli_fetch_assoc($Result)){
@@ -44,7 +59,7 @@
                             <td><?php echo $Data['num']; ?></td>
                             <td><?php echo $Data['address']; ?></td>
                             <td><button>Edit</button></td>
-                            <td><button>Delete</button></td>
+                            <td><a href="list.php?action=delete&id=<?php echo $Data['id'] ?>">Delete</a></td>
                         </tr>
                     <?php } ?>
                 </tbody>
