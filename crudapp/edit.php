@@ -1,7 +1,7 @@
 <?php
     session_start();
     
-    if ($_SESSION['LoggedIn'] == TRUE){
+    if (isset($_SESSION['LoggedIn']) && $_SESSION['LoggedIn'] == TRUE){
         echo "You are Logged In";
     }else{
         echo "You are not Logged In!";
