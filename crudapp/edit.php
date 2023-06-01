@@ -6,8 +6,6 @@
     }else{
         echo "You are not Logged In!";
     }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
