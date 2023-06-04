@@ -1,24 +1,43 @@
 <?php
 
-    // include('header.php');
-    // // error_reporting('page');
+    include('header.php');
 
-    // if($_REQUEST['page'] == 'home'){
-    //     include('home.php');
-    // }elseif($_REQUEST['page'] == 'about'){
-    //     include('about.php');
-    // }elseif($_REQUEST['page'] == 'contact'){
-    //     include('contact.php');
-    // }elseif($_REQUEST['page'] == 'registration'){
-    //     include('registration.php');
-    // }elseif($_REQUEST['page'] == 'Login'){
-    //     include('login.php');
-    // }else{
-    //     include('home.php');
+    // if(isset($_REQUEST['page'])){
+    //    echo  $page = $_REQUEST['page'];
+
+    //    switch ($page) {
+    //         case 'home':
+    //             include('home.php');
+    //             break;
+    //         case 'about';
+    //             include('about.php');
+    //             break;
+    //         case 'contact':
+    //             include('contact.php');
+    //             break;
+    //         case 'registration':
+    //             include('registration.php');
+    //             break;
+    //      case 'login':
+    //             include('login.php');
+    //             break;
+    //         default:
+    //             include('home.php');
+    //             break;
+    //    }
     // }
 
+    if(isset($_REQUEST['page'])){
+        $page = $_REQUEST['page'];
 
-    // include('footer.php');
+        $PageName = $page.".php";
+        include($PageName);
+    }else{
+        include('home.php');
+    }
+
+
+    include('footer.php');
 
 
 
