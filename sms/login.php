@@ -15,7 +15,7 @@
         echo "User name and password does't match!";
       }else{
         $_SESSION['LoggedIn'] = TRUE;
-        header('Location:dashboard.php');
+        header('Location:deshboard.php');
       }
     }
   }
