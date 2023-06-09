@@ -19,14 +19,17 @@
             $subject   = $_POST['subject'];
             $address   = $_POST['address'];
 
-            $Query = "UPDATE teacher SET name = '$name', number = '$number', education = '$education', subject = '$subject', address = '$address' WHERE id = $id";
+            $Query = "UPDATE teachers SET name = '$name', number = '$number', education = '$education', subject = '$subject', address = '$address' WHERE id = $id";
             $Result = mysqli_query($Connection, $Query);
             if($Result){
                 echo "Data Updated successfully!";
             }else{
-                echo "something went rong"
+                echo "something went rong";
             }
-
+            $Query = "SELECT * FROM teachers WHERE id = $id";
+            $Result = mysqli_query($Connection, $Query);
+            $Data = mysqli_fetch_assoc($Result);
+           
         }
     }
 
@@ -58,7 +61,7 @@
                     <p class="text-center small">Enter your personal details to create account</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" method="post" action="index.php?page=edit_teacher&action=update" enctype="multipart/form-data" novalidate>
+                  <form class="row g-3 needs-validation" method="post" action="index.php?page=edit_teacher&action=update&id=<?php echo $Data['id']; ?>" enctype="multipart/form-data" novalidate>
                     <div class="col-12">
                       <label for="yourName" class="form-label">Teacher Name</label>
                       <input type="text" name="name" class="form-control" id="yourName" value="<?php echo $Data['name']; ?>" required>
@@ -91,14 +94,7 @@
                     </div>
 
                     <div class="col-12">
-                      <div class="form-check">
-                        <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
-                        <label class="form-check-label" for="acceptTerms">I agree and accept the <a href="#">terms and conditions</a></label>
-                        <div class="invalid-feedback">You must agree before submitting.</div>
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <button class="btn btn-primary w-100" name="submit" value="Data" type="submit">Submit Data</button>
+                      <button class="btn btn-primary w-100" name="submit" value="Data" type="submit">Update Data</button>
                     </div>
                     <!-- <div class="col-12">
                       <p class="small mb-0">Already have an account? <a href="login.php">Log in</a></p>
