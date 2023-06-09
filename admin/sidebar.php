@@ -92,12 +92,12 @@
         </a>
         <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="index.php?page=icons-bootstrap">
+            <a href="index.php?page=view_subject">
               <i class="bi bi-circle"></i><span>view data</span>
             </a>
           </li>
           <li>
-            <a href="index.php?page=icons-remix">
+            <a href="index.php?page=add_subject">
               <i class="bi bi-circle"></i><span>add data</span>
             </a>
           </li>
