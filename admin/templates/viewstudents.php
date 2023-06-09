@@ -1,0 +1,76 @@
+<?php
+    include('../admin/db.php');
+
+    if(isset($_POST['submit'])){
+        if($_POST['submit'] == 'Delete'){
+            $id = $_POST['id'];
+            $Query = "DELETE FROM students WHERE id = $id";
+            $Result = mysqli_query($Connection, $Query);
+            if($Result){
+                echo "Data Deleted successfullt";
+            }else{
+                echo "something went rong";
+            }
+        }
+    }
+
+
+    $Query = "SELECT * FROM students";
+    $Result = mysqli_query($Connection, $Query);
+
+
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <main id="main" class="main">
+        <div class="container ">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Roll</th>
+                        <th>Number</th>
+                        <th>Subject</th>
+                        <th>Address</th>
+                        <th>Acction</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php while($Rows = mysqli_fetch_assoc($Result)){ ?>
+                        <tr>
+                            <td><?php echo $Rows['id']; ?></td>
+                            <td><?php echo $Rows['name']; ?></td>
+                            <td><?php echo $Rows['roll']; ?></td>
+                            <td><?php echo $Rows['number']; ?></td>
+                            <td><?php echo $Rows['subject']; ?></td>
+                            <td><?php echo $Rows['address']; ?></td>
+                            <td><a href="index.php?page=std_edit&action=edit&id=<?php echo $Rows['id']; ?>">Edit</a></td>
+                            <td>
+                                <form action="index.php?page=viewstudents" enctype="multipart/form-data" method="post">
+                                    <input type="hidden" name="id" value="<?php echo $Rows['id']; ?>">
+                                    <input type="submit" name="submit" value="Delete">
+                                </form>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div>
+    </main>
+                
+
+    
+
+    
+</body>
+</html>
