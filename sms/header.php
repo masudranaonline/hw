@@ -44,9 +44,9 @@
         <div class="logo">CMS</div>
         <div class="menu">
             <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="about.php">About</a></li>
-                <li><a href="contact.php">Contact</a></li>
+                <li><a href="index.php?page=home">Home</a></li>
+                <li><a href="index.php?page=about">About</a></li>
+                <li><a href="index.php?page=contact">Contact</a></li>
                 <li><a href="registration.php">Registration</a></li>
                 <li><a href="login.php">Login</a></li>
             </ul>

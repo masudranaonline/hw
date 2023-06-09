@@ -2,7 +2,7 @@
     $Host = 'localhost';
     $Name = 'root';
     $Pass = '';
-    $DB   = 'demo';
+    $DB   = 'sms';
 
     $Connection = mysqli_connect($Host, $Name, $Pass, $DB);
     if(!$Connection){

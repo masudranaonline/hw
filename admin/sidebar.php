@@ -13,95 +13,38 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-menu-button-wide"></i><span>Students</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="index.php?page=components-alerts">
-              <i class="bi bi-circle"></i><span>Alerts</span>
+            <a href="index.php?page=add_student">
+              <i class="bi bi-circle"></i><span>Add Students</span>
             </a>
           </li>
           <li>
-            <a href="index.php?page=components-accordion">
-              <i class="bi bi-circle"></i><span>Accordion</span>
+            <a href="index.php?page=viewstudents">
+              <i class="bi bi-circle"></i><span>view students</span>
             </a>
           </li>
-          <li>
-            <a href="index.php?page=components-badges">
-              <i class="bi bi-circle"></i><span>Badges</span>
-            </a>
-          </li>
-          <li>
-            <a href="index.php?page=components-breadcrumbs">
-              <i class="bi bi-circle"></i><span>Breadcrumbs</span>
-            </a>
-          </li>
-          <li>
-            <a href="index.php?page=components-buttons">
-              <i class="bi bi-circle"></i><span>Buttons</span>
-            </a>
-          </li>
-          <li>
-            <a href="index.php?page=components-cards">
-              <i class="bi bi-circle"></i><span>Cards</span>
-            </a>
-          </li>
-          <li>
-            <a href="index.php?page=components-carousel">
-              <i class="bi bi-circle"></i><span>Carousel</span>
-            </a>
-          </li>
-          <li>
-            <a href="index.php?page=components-list-group">
-              <i class="bi bi-circle"></i><span>List group</span>
-            </a>
-          </li>
-          <li>
-            <a href="index.php?page=components-modal">
-              <i class="bi bi-circle"></i><span>Modal</span>
-            </a>
-          </li>
-          <li>
-            <a href="index.php?page=components-tabs">
-              <i class="bi bi-circle"></i><span>Tabs</span>
-            </a>
-          </li>
-          <li>
-            <a href="index.php?page=components-pagination">
-              <i class="bi bi-circle"></i><span>Pagination</span>
-            </a>
-          </li>
-          <li>
-            <a href="index.php?page=components-progress">
-              <i class="bi bi-circle"></i><span>Progress</span>
-            </a>
-          </li>
-          <li>
-            <a href="index.php?page=components-spinners">
-              <i class="bi bi-circle"></i><span>Spinners</span>
-            </a>
-          </li>
-          <li>
-            <a href="index.php?page=components-tooltips">
-              <i class="bi bi-circle"></i><span>Tooltips</span>
-            </a>
-          </li>
+         
         </ul>
       </li><!-- End Components Nav -->
 
+
+
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-journal-text"></i><span>Teacher</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="index.php?page=forms-elements">
-              <i class="bi bi-circle"></i><span>Form Elements</span>
+            <a href="index.php?page=add_teacher">
+              <i class="bi bi-circle"></i><span>Add Teacher</span>
             </a>
           </li>
           <li>
-            <a href="index.php?page=forms-layouts">
-              <i class="bi bi-circle"></i><span>Form Layouts</span>
+            <a href="index.php?page=view_teacher">
+              <i class="bi bi-circle"></i><span>view teacher</span>
             </a>
           </li>
           <li>
