@@ -3,14 +3,15 @@
 
     if(isset($_POST['submit'])){
         if($_POST['submit'] == 'Data'){
-            echo $name = $_POST['name'];
+
+            $name = $_POST['name'];
             $roll = $_POST['roll'];
             $number = $_POST['number'];
             $subject = $_POST['subject'];
             $address = $_POST['address'];
 
             echo $Query = "INSERT INTO students(name, roll, number, subject, address) VALUES('$name', '$roll', '$number', '$subject', '$address')";
-            $Result = mysqli_query($Connection, $Query);
+            echo $Result = mysqli_query($Connection, $Query);
             if($Result){
                 echo "Data stored successfully";
             }else{
