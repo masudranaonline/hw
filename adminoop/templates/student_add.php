@@ -1,4 +1,7 @@
+<?php
+  error_reporting(0);
 
+?>
 <main id="main" class="main">
 
 <div class="pagetitle">
@@ -15,11 +18,25 @@
 <section class="section">
   <div class="row">
     <div class="col-lg-8 offset-lg-2">
+        <?php
 
+          if($_REQUEST['status']){
+            if($_REQUEST['status'] == 1){
+              echo "Student entry Successfully";
+            }
+            
+            if($_REQUEST['status'] == 0){
+              echo "something went rong!";
+            }
+          }
+        
+        ?>
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Example Card</h5>
-            <form>
+          <h5 class="card-title">
+            
+          </h5>
+            <form action="controller/student_controller.php" method="post" enctype="multipart/form-data">
                 <div class="row mb-3">
                   <label for="inputEmail3" class="col-sm-3 col-form-label">Student Name</label>
                   <div class="col-sm-9">
@@ -53,7 +70,7 @@
                 </div>
 
                 <div class="text-center">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" name="submit" value="Submit_Data" class="btn btn-primary">Submit</button>
                 </div>
             </form>
         </div>

@@ -22,9 +22,17 @@
             $this->address = $Data['address'];
 
             $Query = "INSERT INTO students(name, roll, number, subject, address)";
-            $Query .= " VALUES('$this->name', '$this->roll', '$this->number', '$this->subject', '$this->address')";
+           echo $Query .= " VALUES('$this->name', '$this->roll', '$this->number', '$this->subject', '$this->address')";
 
-            $obj = new Db();
+            $Db = new Db();
+            $Db->execute($Query);
+            $Db->close();
+        }
+
+        function getAll()
+        {
+            $Query = "SELECT * FROM students";
+            $Db = new Db();
             $Db->execute($Query);
             $Db->close();
         }

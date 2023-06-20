@@ -6,16 +6,16 @@
 
      class Db
      {
-        private $Host;
-        private $Name;
-        private $Pass;
-        private $Db;
+        private $Host = 'localhost';
+        private $Name = 'root';
+        private $Pass = '';
+        private $Db   = 'sms';
 
         private $Connection;
 
         function __construct()
         {
-            $this->Connection = new mysqli($this->Host, $this->Name, $this->Pass, $this->Db);
+           $this->Connection = new mysqli($this->Host, $this->Name, $this->Pass, $this->Db);
         }
 
         function execute($Query)
@@ -30,7 +30,7 @@
 
         function close()
         {
-            $this->close();
+            $this->Connection->close();
         }
 
      }
