@@ -12,8 +12,13 @@
         'address' => $_POST['address'],
       ];
       $Student = new Student();
-      $Student->add($Data);
-      header('Location:../index.php?page=student_add&status=1') ;
+       $Result =$Student->add($Data);
+      //  if($Result)
+           header('Location:../index.php?page=student_add&status=1');
+      //  else
+          //  header('Location:../index.php?page=student_add&status=0');
+
+     
     }
   }
 

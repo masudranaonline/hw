@@ -1,5 +1,4 @@
 <?php
-
     /**
      * Student class
      */
@@ -33,8 +32,12 @@
         {
             $Query = "SELECT * FROM students";
             $Db = new Db();
-            $Db->execute($Query);
+            $Data = $Db->execute($Query);
+            while($Row = mysqli_fetch_assoc($Data)){
+                $Student[] = $Row;
+            }
             $Db->close();
+            return $Row;
         }
     }
 
