@@ -23,7 +23,7 @@ error_reporting(0);
           <div class="card-body">
             <h5 class="card-title">
               <?php
-              // if ($_REQUEST['status']) {
+              if (isset($_REQUEST['status'])) {
                 if ($_REQUEST['status'] == 1) {
               ?>
                   <script>
@@ -55,7 +55,7 @@ error_reporting(0);
                   </div>
               <?php
                 }
-              // }
+              }
               ?>
             </h5>
             <form action="controller/student_controller.php" method="post" enctype="multipart/form-data">

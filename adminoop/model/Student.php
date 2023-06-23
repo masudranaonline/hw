@@ -28,16 +28,41 @@
             $Db->close();
         }
 
+        public function update($Data, $id)
+        {
+            $this->name = $Data['name'];
+            $this->roll = $Data['roll'];
+            $this->number = $Data['number'];
+            $this->subject = $Data['subject'];
+            $this->address = $Data['address'];
+
+            $this->id = $id;
+
+            $Query = "UPDATE students SET name = '$this->name', roll = '$this->roll', number = '$this->number', subject ='$this->subject', address = '$this->address'";
+            echo $Query .= " WHERE id = $this->id";
+
+            $Db = new Db();
+            $Result = $Db->execute($Query);
+            $Db->close();
+            return $Result;
+        }
+
         function getAll()
         {
-            $Query = "SELECT * FROM students";
+             $Query = "SELECT * FROM students";
             $Db = new Db();
-            $Data = $Db->execute($Query);
-            while($Row = mysqli_fetch_assoc($Data)){
-                $Student[] = $Row;
-            }
+             $Data = $Db->fetchData($Query);
             $Db->close();
-            return $Row;
+            return $Data;
+        }
+
+        public function getByPk($id)
+        {
+            $Query = "SELECT * FROM students WHERE id = $id";
+            $Db = new Db();
+            $Data = $Db->fetchData($Query);
+            $Db->close();
+            return $Data;
         }
     }
 

@@ -4,7 +4,7 @@
 
     $obj = new Student();
     $Data = $obj->getAll();
-    var_dump($Data);
+
 
 ?>
 
@@ -26,7 +26,7 @@
             <div class="col-lg-13">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Default Table</h5>
+                        <h5 class="card-title">Student List</h5>
 
                         <!-- Default Table -->
                         <table class="table">
@@ -38,6 +38,7 @@
                                     <th scope="col">Number</th>
                                     <th scope="col">Subject</th>
                                     <th scope="col">Address</th>
+                                    <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -49,6 +50,16 @@
                                     <td><?php echo $Student['number']; ?></td>
                                     <td><?php echo $Student['subject']; ?></td>
                                     <td><?php echo $Student['address']; ?></td>
+                                    <td><form action="index.php?page=student_edit" method="post" enctype="multipart/form-data">
+                                        <input type="hidden" name="id" value="<?php echo $Student['id']; ?>">
+                                        <button type="submit" name="submit" value="Edit" class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
+                                    </form></td>
+                                    <td>
+                                          <input type="hidden" id="id" value="<?php echo $Student['id']; ?>">
+                                          <form action="" method="post">
+                                            <button type="submit" name="submit" value="Delete" class="btn btn-danger"><i class="bi bi-trash"></i></button>
+                                          </form>
+                                    </td>
                                 </tr> 
                                 <?php } ?>
                             </tbody>
