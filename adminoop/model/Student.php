@@ -47,6 +47,17 @@
             return $Result;
         }
 
+        public function delete($id)
+        {
+            $this->id = $id;
+
+            $Query = "DELETE FROM students WHERE id = $this->id";
+            $Db = new Db();
+            $Result = $Db->execute($Query);
+            $Db->close();
+            return $Result;
+        }
+
         function getAll()
         {
              $Query = "SELECT * FROM students";

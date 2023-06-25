@@ -5,13 +5,15 @@
     $obj = new Student();
     $Data = $obj->getAll();
 
+    
+
 
 ?>
 
 <main id="main" class="main">
 
     <div class="pagetitle">
-        <h1>Blank Page</h1>
+        <h1>Student List</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -26,7 +28,20 @@
             <div class="col-lg-13">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Student List</h5>
+                        <h5 class="card-title">Student List
+                        <?php
+                                if(isset($_POST['edit_status'])){
+                                    if($_REQUEST['edit_status'] == 1){
+                            ?>
+                            <script>
+                                Swal.fire(
+                                'success!',
+                                'Student Data Entry successfull!',
+                                'success'
+                                )
+                            </script>
+                            <?php }} ?>
+                        </h5>
 
                         <!-- Default Table -->
                         <table class="table">
@@ -50,13 +65,15 @@
                                     <td><?php echo $Student['number']; ?></td>
                                     <td><?php echo $Student['subject']; ?></td>
                                     <td><?php echo $Student['address']; ?></td>
-                                    <td><form action="index.php?page=student_edit" method="post" enctype="multipart/form-data">
-                                        <input type="hidden" name="id" value="<?php echo $Student['id']; ?>">
-                                        <button type="submit" name="submit" value="Edit" class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
-                                    </form></td>
                                     <td>
-                                          <input type="hidden" id="id" value="<?php echo $Student['id']; ?>">
-                                          <form action="" method="post">
+                                        <form action="index.php?page=student_edit" method="post" enctype="multipart/form-data">
+                                            <input type="hidden" name="id" value="<?php echo $Student['id']; ?>">
+                                            <button type="submit" name="submit" value="Edit" class="btn btn-warning"><i class="bi bi-pencil-square"></i></button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                          <form action="controller/student_controller.php" method="post" enctype="multipart/form-data">
+                                          <input type="hidden" name="id" value="<?php echo $Student['id']; ?>">
                                             <button type="submit" name="submit" value="Delete" class="btn btn-danger"><i class="bi bi-trash"></i></button>
                                           </form>
                                     </td>

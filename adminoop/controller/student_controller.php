@@ -16,7 +16,7 @@
       //  if($Result)
            header('Location:../index.php?page=student_add&status=1');
       //  else
-          //  header('Location:../index.php?page=student_add&status=0');
+      //      header('Location:../index.php?page=student_add&status=0');
 
      
     }
@@ -39,6 +39,24 @@
         header('Location: ../index.php?page=student_list$edit_status=0');
       }
     }
+
+
+    if($_POST['submit'] == 'Delete'){
+       $id = $_POST['id'];
+
+      $obj = new Student();
+      $Result = $obj->delete($id);
+      var_dump($Result);
+
+      if($Result){
+        header('Location: ../index.php?page=student_list&delete_status=1');
+      }else{
+        header('Location: ../index.php?page=student_list&delete_status=0');
+      }
+    }
+
+
+  
 
 
   }

@@ -35,7 +35,9 @@ if (isset($_POST['submit'])) {
             <div class="col-lg-13">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Student Edit</h5>
+                        <h5 class="card-title">Student Edit
+                            
+                        </h5>
                         <form action="controller/student_controller.php" method="post" enctype="multipart/form-data">
                             <div class="row mb-3">
                                 <input type="hidden" name="id" value="<?php echo $Data[0]['id']; ?>">
