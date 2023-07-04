@@ -65,7 +65,7 @@
                     <p class="text-center small">Enter your username & password to login</p>
                   </div>
 
-                  <form action="" method="post" enctype="multipart/form-data" class="row g-3 needs-validation" novalidate>
+                  <form action="controller/register_controller.php" method="post" enctype="multipart/form-data" class="row g-3 needs-validation" novalidate>
 
                     <div class="col-12">
                       <label for="yourUsername" class="form-label">Username</label>
@@ -89,7 +89,7 @@
                       </div>
                     </div>
                     <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit">Login</button>
+                      <button class="btn btn-primary w-100" type="submit" value="Login_Data">Login</button>
                     </div>
                     <div class="col-12">
                       <p class="small mb-0">Don't have account? <a href="register.php">Create an account</a></p>

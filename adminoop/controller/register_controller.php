@@ -1,5 +1,7 @@
 <?php
 
+    session_start();
+
     include('../model/Db.php');
     include('../model/Registration.php');
 
@@ -21,6 +23,26 @@
                 header('Location: ../register.php');
             }
         }
+
+        if($_POST['submit'] == 'Login_Data'){
+            $Data = [
+                'username' => $_POST['username'],
+                'password' => $_POST['password'],
+            ];
+
+            $Registration = new Registration();
+            $Result = $Registration->getData($Data);
+            $Rows = mysqli_num_rows($Result);
+
+            if($Rows == 0){
+                echo "username or password does't match !";
+            }else{
+                $_SESSION['LoggedIn'] = true;
+                header('Location: ../index.php');
+            }
+        }
+
+
     }
 
 
