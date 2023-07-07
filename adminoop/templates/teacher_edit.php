@@ -1,7 +1,17 @@
 <?php
 
-  include('../model/Db.php');
-  include('../model/Teacher.php');
+  include('model/Db.php');
+  include('model/Teacher.php');
+
+  if (isset($_POST['submit'])){
+    if ($_POST['submit'] == 'Edit'){
+      $id = $_POST['id'];
+
+      $obj = new Teacher();
+      $Data = $obj->getByPk($id);
+      // var_dump($Data);
+    }
+  }
 
 
 
@@ -32,27 +42,30 @@
               <!-- Vertical Form -->
               <form action="controller/teacher_controller.php" method="post" enctype="multipart/form-data" class="row g-3">
                 <div class="col-12">
+                  <input type="hidden" name="id" value="<?php echo $Data[0]['id']; ?>">
                   <label for="inputNanme4" class="form-label">Teacher Name</label>
-                  <input type="text" name="name" class="form-control" id="inputNanme4">
+                  <input type="text" name="name" value="<?php echo $Data[0]['name']; ?>" class="form-control" id="inputNanme4">
                 </div>
                 <div class="col-12">
                   <label for="inputEmail4" class="form-label">Number</label>
-                  <input type="number" name="number" class="form-control" id="inputEmail4">
+                  <input type="number" name="number" value="<?php echo $Data[0]['number']; ?>" class="form-control" id="inputEmail4">
                 </div>
                 <div class="col-12">
                   <label for="inputPassword4" class="form-label">Education</label>
-                  <input type="text" name="education" class="form-control" id="inputPassword4">
+                  <input type="text" name="education" value="<?php echo $Data[0]['education']; ?>" class="form-control" id="inputPassword4">
                 </div>
                 <div class="col-12">
                   <label for="inputPassword4" class="form-label">Subject</label>
-                  <input type="text" name="subject" class="form-control" id="inputPassword4">
+                  <input type="text" name="subject" value="<?php echo $Data[0]['subject']; ?>" class="form-control" id="inputPassword4">
                 </div>
                 <div class="col-12">
                   <label for="inputAddress" class="form-label">Address</label>
-                  <textarea name="address" id="" cols="30" rows="5" class="form-control"></textarea>
+                  <textarea name="address" id="" cols="30" rows="5" class="form-control">
+                  <?php echo $Data[0]['address']; ?>
+                  </textarea>
                 </div>
                 <div class="text-center">
-                  <button type="submit" name="submit" value="Submit_Data" class="btn btn-primary">Submit</button>
+                  <button type="submit" name="submit" value="Update_Data" class="btn btn-primary">Submit</button>
                 </div>
               </form><!-- Vertical Form -->
 
