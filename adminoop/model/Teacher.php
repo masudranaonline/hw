@@ -27,6 +27,36 @@
             $Db->execute($Query);
             $Db->close();
         }
+
+        function delete($id)
+        {
+            $this->id = $id;
+            $Query = "DELETE FROM teachers WHERE id = $this->id";
+
+            $Db = new Db();
+            $Data = $Db->execute($Query);
+            $Db->close();
+            return $Data;
+        }
+
+        function getAll()
+        {
+            $Query = "SELECT * FROM teachers";
+            $Db = new Db();
+            $Data = $Db->fetchData($Query);
+            $Db->close();
+            return $Data;
+        }
+
+        function getById($id)
+        {
+            $this->id = $id;
+            $Query = "SELECT * FROM teachers WHERE id = $this->id";
+            $Db = new Db();
+            $Result = $Db->fetchData($Query);
+            $Db->close();
+            return $Result;
+        }
     }
     
 

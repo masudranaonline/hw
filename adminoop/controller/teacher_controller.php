@@ -16,9 +16,19 @@
             // if($Result){
                 header('Location:../index.php?page=teacher_add&status=1');
             // }
+        }
 
+        if($_POST['submit'] == 'Delete'){
+            $id = $_POST['id'];
 
-     
+            $obj = new Teacher();
+            $Result = $obj->delete($id);
+
+            if($Result){
+                header('Location: ../index.php?page=teacher_list&delete_status=1');
+            }else{
+                header('Location: ../index.php?page=teacher_list&delete_status=0');
+            }
         }
     }
 
