@@ -21,7 +21,7 @@
             $this->address = $Data['address'];
 
             $Query = "INSERT INTO students(name, roll, number, subject, address)";
-           echo $Query .= " VALUES('$this->name', '$this->roll', '$this->number', '$this->subject', '$this->address')";
+            $Query .= " VALUES('$this->name', '$this->roll', '$this->number', '$this->subject', '$this->address')";
 
             $Db = new Db();
             $Db->execute($Query);
