@@ -59,7 +59,7 @@
             </a>
           </li>
           <li>
-            <a href="index.php?page=result_view">
+            <a href="index.php?page=result_list">
               <i class="bi bi-circle"></i><span>View</span>
             </a>
           </li>
