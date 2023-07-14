@@ -17,7 +17,34 @@
     <div class="col-lg-8 offset-lg-2">
     <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Vertical Form</h5>
+              <h5 class="card-title">
+                <?php
+                  if(isset($_REQUEST['status'])){
+                    if($_REQUEST['status'] == 1){
+                      ?>
+                      <script>
+                          Swal.fire(
+                            'Success!',
+                            'Teacher Data Add Successfully!',
+                            'success'
+                          )
+                      </script>
+                    <?php
+                    }
+                    if($_REQUEST['status'] == 0){
+                      ?>
+                      <script>
+                          Swal.fire(
+                            'Success!',
+                            'Something went rong!',
+                            'error'
+                          )
+                      </script>
+                      <?php
+                    }
+                  }
+                ?>
+              </h5>
 
               <!-- Vertical Form -->
               <form action="controller/teacher_controller.php" method="post" enctype="multipart/form-data" class="row g-3">

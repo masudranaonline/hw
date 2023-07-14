@@ -1,5 +1,13 @@
 <?php
 
+    // session_start();
+    // if(!$_SESSION['LoggedIn'] == true){
+    //   session_destroy();
+    //   header('Location:login.php');
+    // }
+
+
+
     include('templates/header.php');
     include('templates/sidebar.php');
 

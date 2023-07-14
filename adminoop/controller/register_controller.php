@@ -37,7 +37,7 @@
             if($Rows == 0){
                 echo "username or password does't match !";
             }else{
-                $_SESSION['LoggedIn'] = true;
+                $_SESSION['LoggedIn'] = TRUE;
                 header('Location: ../index.php');
             }
         }

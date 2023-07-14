@@ -33,7 +33,7 @@
             $Query = "SELECT * FROM register WHERE username = '$this->username' AND password = '$this->password'";
 
             $Db = new Db();
-            $Result = $Db->execute($Query);
+            $Result = $Db->fetchData($Query);
             // $Rows = mysqli_num_rows($Result);
             $Db->close();
             return $Result;
