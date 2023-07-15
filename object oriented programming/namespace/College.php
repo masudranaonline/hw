@@ -1,12 +1,13 @@
 <?php
 
-use function App\Guardians\greet;
-use function App\Teacher\greet as TeacherGreet;
+    require_once('classess/Guardians/Guardians.php');
+    require_once('classess/Teacher/Teacher.php');
 
-require_once('Student/Cmt.php');
-require_once('Student/Ent.php');
-require_once('Guardians/Guardians.php');
-require_once('Teacher/Teacher.php');
+    use App\classess\Guardians;
+    use App\classess\Teacher;
 
-echo greet();
-echo TeacherGreet();
+    $Guardians = new Guardians();
+    echo $Guardians->greet();
+
+    $Teacher = new Teacher;
+    echo $Teacher->greet();
