@@ -1,0 +1,17 @@
+body {
+    background-color: #b49f86;
+}
+.heading {
+    text-align: center;
+}
+.box {
+
+    padding: 0 50px 10px;
+    background-color: #f9fbfd;
+    margin: 50px auto;
+    
+}
+.button {
+    text-align: center;
+}
+
