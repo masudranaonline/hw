@@ -34,7 +34,7 @@
                     </div>
                     <div class="form-group">
                         <label for="name">Address</label><br>
-                        <textarea name="" class="form-control" id="address" placeholder="Enter your Address" cols="75" rows="5"></textarea>
+                        <textarea name="" class="form-control" id="address" placeholder="Enter your Address" cols="75" rows="5"><textarea>
                     </div>
                    <div class="button">
                          <button onclick="addStudent()" class="btn btn-primary" id="btnAdd">Sbumit student Data</button>
